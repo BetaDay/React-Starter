@@ -48,41 +48,67 @@ const HeroCarousel: React.FC = () => {
         <div className="w-full md:w-[30%] flex items-center justify-center h-1/2 md:h-full px-6 py-10 md:py-0">
           {currentSlide.id === 3 ? (
             <div className="flex flex-col items-center justify-center relative w-80 h-[34rem]">
-              {/* SVG Curve */}
-              <svg
-                viewBox="0 0 400 400"
-                className="absolute w-full h-full z-0"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M150 20 C50 100, 50 300, 150 380"
-                  stroke="#F4511E"
-                  strokeWidth="4"
-                  fill="transparent"
-                />
-              </svg>
+              {/* Desktop View: SVG + Circles + Button */}
+              <div className="hidden md:block w-full h-full relative">
+                {/* SVG Curve */}
+                <svg
+                  viewBox="0 0 400 400"
+                  className="absolute w-full h-full z-0"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M150 20 C50 100, 50 300, 150 380"
+                    stroke="#F4511E"
+                    strokeWidth="4"
+                    fill="transparent"
+                  />
+                </svg>
 
-              {/* Circles */}
-              {['Fast', 'Reliable', 'Affordable'].map((text, idx) => {
-                const positions = [
-                  'top-4 left-1/2 transform -translate-x-1/2',
-                  'top-[38%] left-[20%] transform -translate-x-1/2',
-                  'bottom-6 left-1/2 transform -translate-x-1/2',
-                ];
-                return (
-                  <div
-                    key={text}
-                    className={`absolute ${positions[idx]} z-10 bg-[#F2542D] w-[130px] h-[130px] rounded-full flex items-center justify-center text-white font-semibold text-xl shadow-lg`}
-                  >
-                    {text}
-                  </div>
-                );
-              })}
+                {/* Circles */}
+                {['Fast', 'Reliable', 'Affordable'].map((text, idx) => {
+                  const positions = [
+                    'top-4 left-1/2 transform -translate-x-1/2',
+                    'top-[38%] left-[20%] transform -translate-x-1/2',
+                    'bottom-6 left-1/2 transform -translate-x-1/2',
+                  ];
+                  return (
+                    <div
+                      key={text}
+                      className={`absolute ${positions[idx]} z-10 bg-[#F2542D] w-[130px] h-[130px] rounded-full flex items-center justify-center text-white font-semibold text-xl shadow-lg`}
+                    >
+                      {text}
+                    </div>
+                  );
+                })}
 
-              <button className="absolute bottom-[-4rem] px-6 py-2 bg-[#F2542D] text-white rounded shadow hover:bg-[#d94422] transition">
-                Explore
-              </button>
+                <button className="absolute bottom-[-4rem] px-6 py-2 bg-[#F2542D] text-white rounded shadow hover:bg-[#d94422] transition">
+                  Explore
+                </button>
+              </div>
+
+              {/* Mobile View: Slogan */}
+              <div className="block md:hidden top-5 transform text-gray-600 py-2 rounded-lg text-lg font-medium z-20 text-center w-full">
+                Find your perfect space, anytime!
+              <div className="flex flex-row justify-center items-center gap-6 mt-4">
+              <div className="flex flex-row justify-center items-center gap-4">
+                {['Fast', 'Reliable', 'Affordable'].map((text, index, array) => (
+                  <React.Fragment key={text}>
+                    <div className="bg-[#F2542D] w-[80px] h-[80px] rounded-full flex items-center justify-center text-white font-semibold text-sm shadow-lg">
+                      {text}
+                    </div>
+                    {/* Dot between circles, not after the last one */}
+                    {index < array.length - 1 && (
+                      <div className="w-2 h-2 bg-orange-500 rounded-full" />
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
+
+            </div>
+
+
+              </div>
             </div>
           ) : (
             <div className="max-w-md space-y-6 text-center md:text-left">
@@ -114,7 +140,7 @@ const HeroCarousel: React.FC = () => {
         </div>
 
         {/* Right Image */}
-        <div className="w-full md:w-[70%] h-1/2 md:h-full">
+        <div className="w-full md:w-[70%] h-1/2 md:h-full relative">
           <img
             src={currentSlide.image}
             alt="hero"
@@ -124,7 +150,7 @@ const HeroCarousel: React.FC = () => {
       </div>
 
       {/* Pagination Dots */}
-      <div className="absolute bottom-5 md:bottom-10 flex justify-center w-full space-x-3">
+      <div className="absolute bottom-20 md:bottom-50 flex justify-center w-full space-x-3">
         {slides.map((_, index) => (
           <button
             key={index}

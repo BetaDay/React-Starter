@@ -15,37 +15,37 @@ const testimonials: Testimonial[] = [
     name: 'Alice Wanjiku',
     message: 'Great platform to volunteer! Love the user experience.',
     rating: 4,
-    img: 'https://randomuser.me/api/portraits/women/21.jpg',
+    img: 'images/Reagan.jpg',
   },
   {
     name: 'Brian Mutiso',
     message: 'I got connected to amazing causes. Highly recommended!',
     rating: 3,
-    img: 'https://randomuser.me/api/portraits/men/31.jpg',
+    img: 'images/Elsie.jpg',
   },
   {
     name: 'Faith Cherono',
     message: 'VolunteerHub made it easy to apply, participate, and make an impact. I love it!',
     rating: 5,
-    img: 'https://randomuser.me/api/portraits/women/44.jpg',
+    img: 'images/Frank.jpg',
   },
   {
     name: 'James Ochieng',
     message: 'The dashboard is clean and the events are legit.',
     rating: 4,
-    img: 'https://randomuser.me/api/portraits/men/45.jpg',
+    img: 'images/Lydia.jpg',
   },
   {
     name: 'Lilian Njeri',
     message: 'A beautiful way to give back to the community.',
     rating: 3,
-    img: 'https://randomuser.me/api/portraits/women/65.jpg',
+    img: 'images/pexels.jpg',
   },
   {
     name: 'Kevin Kiprotich',
     message: 'Smooth onboarding and easy navigation. Thumbs up!',
     rating: 4,
-    img: 'https://randomuser.me/api/portraits/men/78.jpg',
+    img: 'images/pexels2.jpg',
   },
 ];
 
