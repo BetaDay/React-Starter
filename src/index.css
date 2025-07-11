@@ -151,5 +151,18 @@ All colors MUST be HSL.
 }
 
  .avatar {
-  @apply w-[50px] h-[50px] rounded-full border-2 border-white transition-all duration-500 cursor-pointer;
+  @apply w-[60px] h-[60px] rounded-full border-2 border-white transition-all duration-500 cursor-pointer;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+/* Add this to your global CSS or Tailwind config file */
+.chatbot-rotate {
+  transition: transform 0.5s ease-in-out;
+}
+.chatbot-rotate:hover {
+  transform: scale(1.5);
 }

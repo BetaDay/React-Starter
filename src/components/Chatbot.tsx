@@ -165,9 +165,10 @@ const Chatbot: React.FC = () => {
       ) : (
         <button
           onClick={() => setOpen(true)}
-          className="bg-orange-600 text-white p-4 rounded-full shadow-lg hover:bg-orange-700 transition"
+          className="bg-orange-600 text-white p-4 rounded-full shadow-lg hover:bg-orange-700 transition "
         >
-          <FaRobot size={20} />
+          <FaRobot size={20} className="chatbot-rotate" />
+
         </button>
       )}
     </div>

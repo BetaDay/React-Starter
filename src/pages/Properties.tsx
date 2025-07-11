@@ -8,6 +8,7 @@ import { Slider } from "@/components/ui/slider";
 import { MapPin, Filter, Grid, Map } from "lucide-react";
 import PropertyCard from "@/components/PropertyCard";
 import { useProperties } from "@/hooks/useProperties";
+import Chatbot from "@/components/Chatbot";
 
 const Properties = () => {
   const { data: properties = [], isLoading } = useProperties();
@@ -220,6 +221,7 @@ const Properties = () => {
           </div>
         </div>
       </div>
+      <Chatbot />
     </div>
   );
 };

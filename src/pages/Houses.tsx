@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, Filter, Grid, Map, Home, Users } from "lucide-react";
 import PropertyCard from "@/components/PropertyCard";
 import { useAllProperties } from "@/hooks/useProperties";
+import Chatbot from "@/components/Chatbot";
 
 const Houses = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'map'>('grid');
@@ -246,6 +247,7 @@ const Houses = () => {
           </div>
         </div>
       </div>
+      <Chatbot />
     </div>
   );
 };
